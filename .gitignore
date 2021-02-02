@@ -8,6 +8,8 @@
 # testing
 /coverage
 /todo.txt
+.eslintcache
+.cache
 
 # production
 /build
