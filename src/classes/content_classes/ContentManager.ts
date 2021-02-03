@@ -6,7 +6,7 @@ export class ContentManager {
     userContentManager: UserContentManager;
 
     constructor() {
-        // TODO: Constructor implementation here
-        // initialize global and user content
+        this.globalContentManager = new GlobalContentManager();
+        this.userContentManager = new UserContentManager();
     }
 }

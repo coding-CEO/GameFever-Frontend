@@ -14,13 +14,14 @@ export class Search {
 
     searchProductByName = (productName: string): Product[] => {
         // TODO: Implementaion Here
-        let data = HTTP.get("product/1");
-        if(data){
-            //TODO: you can add to history here
-            // this.addSearchToHistory();
-            return Converter.toProductList(data);
-        }
-        return [];
+        // let data = HTTP.get("product/1");
+        // if(data){
+        //     //TODO: you can add to history here
+        //     // this.addSearchToHistory();
+        //     return Converter.toProductList(data);
+        // }
+        // return [];
+        throw new Error("fix this");
     }
 
     searchProductByCategory = (category: Category): Product[] => {
