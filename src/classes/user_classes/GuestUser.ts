@@ -8,9 +8,12 @@ export class GuestUser {
 
     constructor(){
         //TODO: initialize fields
+        this.contentManager = new ContentManager();
+        this.search = new Search();
     }
 
     getProductDetails = (productId: number): Product => {
         // TODO: implementation goes here...
+        throw new Error("implement this method");
     }
 }

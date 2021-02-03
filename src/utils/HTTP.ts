@@ -14,8 +14,9 @@ export class HTTP {
 
         try {
             //FIXME: fix this...
-            let { data } = await axios.get(route, config);
-            return data;
+            throw new Error("fix this");
+            // let { data } = await axios.get(route, config);
+            // return data;
         } catch (error) {
             ErrorHandler.handle(error);
             return null;
