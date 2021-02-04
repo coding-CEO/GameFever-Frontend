@@ -1,0 +1,53 @@
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="password"],
+  &[type="number"] {
+    width: 100%;
+    border: 2px solid rgb(189, 189, 189);
+    appearance: none;
+    border-radius: 3px;
+    padding: 12px;
+    outline: none;
+  }
+}
+
+.text_input_container {
+  @include flex(row, center);
+  width: 100%;
+}
+
+.custom_text_input_container {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  width: 100%;
+  @include flex(row, center);
+
+  input {
+    transition: border-color 0.3s ease;
+    &:focus {
+      border-color: #222222;
+      transition-delay: 0.1s;
+    }
+  }
+
+  .hasValue + .placeholder,
+  input:focus + .placeholder {
+    top: 20px;
+    font-size: 12px;
+    color: #222;
+  }
+
+  .placeholder {
+    pointer-events: none;
+    padding: 0 3px;
+    background-color: white;
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: gray;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  }
+}

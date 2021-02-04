@@ -1,0 +1,12 @@
+//import all variables
+@import "./basic_components/variables.scss";
+
+// import all media queries
+@import "./basic_components/responsive.scss";
+
+// basic stuff
+@import "./basic_components/flex.scss";
+@import "./basic_components/container.scss";
+
+// Components below
+@import "./basic_components/input.scss";
