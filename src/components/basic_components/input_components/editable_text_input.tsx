@@ -4,6 +4,7 @@ import CustomTextInput from './custom_text_input';
 
 interface Props {
     defaultValue: string;
+    isEnable: boolean;
     onSave?: Function;
     placeholder?: string;
     onTextChange?: Function;
@@ -48,7 +49,8 @@ class EditableTextInput extends React.Component<Props, State> {
     return (
       <div className="editableTextInputContainer">
           <CustomTextInput type="text" defaultValue={this.state.currentTextValue}
-            placeholder={this.props.placeholder} onTextChange={this.handleTextChange} required={false}/>
+            placeholder={this.props.placeholder} onTextChange={this.handleTextChange}
+            isEnable={this.props.isEnable} required={false}/>
           {this.canShowEditOption() && this.showEditOption()}
       </div>
     );
