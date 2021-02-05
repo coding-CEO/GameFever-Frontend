@@ -9,4 +9,12 @@
 @import "./basic_components/container.scss";
 
 // Components below
+.disable {
+  pointer-events: none;
+  background-color: $disableElementColor;
+  color: $disableTextColor;
+  border: 2px solid $disableElementBorderColor;
+}
+
+@import "./basic_components/button.scss";
 @import "./basic_components/input.scss";

@@ -4,7 +4,20 @@ import './App.scss';
 
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class App extends React.Component {
+interface State{
+  
+}
+
+class App extends React.Component<any, State> {
+
+  constructor(props: any){
+    super(props);
+    this.debugHandler.bind(this);
+  }
+
+  debugHandler = () => {
+    //TODO: this is temperary function, delete when done
+  }
 
   render(){
     return (

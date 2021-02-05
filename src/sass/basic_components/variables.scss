@@ -1,8 +1,16 @@
-// 320px — 480px: Mobile devices
-// 481px — 768px: iPads, Tablets
-// 769px — 1024px: Small screens, laptops
-// 1025px — 1200px: Desktops, large screens
-
+// Screen Width Breaks
 $tablet_min_width: 481px;
 $laptop_min_width: 769px;
 $desktop_min_width: 1025px;
+
+// Colors
+// $primaryColor: rgb(76, 93, 149);
+// $secondaryColor: rgb(204, 194, 55);
+$primaryColor: #3e57a8;
+$secondaryColor: #a8872d;
+
+$disableElementColor: lightgray;
+$disableElementBorderColor: rgb(189, 189, 189);
+$disableTextColor: rgb(158, 158, 158);
+
+$normalTextColor: #222;
