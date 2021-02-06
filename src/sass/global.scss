@@ -9,12 +9,24 @@
 @import "./basic_components/container.scss";
 
 // Components below
-.disable {
-  pointer-events: none;
-  background-color: $disableElementColor;
-  color: $disableTextColor;
-  border: 2px solid $disableElementBorderColor;
+@mixin disable {
+  .disable {
+    pointer-events: none;
+    background-color: $disableElementColor;
+    color: $disableTextColor;
+    border: 2px solid $disableElementBorderColor;
+  }
+}
+
+@include disable();
+
+@mixin shadowContainer($margin_top) {
+  border-radius: 4px;
+  box-shadow: 0 0 3px $containerBorderColor;
+  padding: 5px;
+  margin-top: $margin_top;
 }
 
 @import "./basic_components/button.scss";
 @import "./basic_components/input.scss";
+@import "./basic_components/image.scss";

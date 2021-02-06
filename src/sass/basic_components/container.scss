@@ -1,7 +1,7 @@
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
-  margin: 5px 0;
+  // margin: 5px 0;
 }
 
 .row {
@@ -11,6 +11,9 @@
   @include tablet {
     @include flex(row, center);
   }
+}
+.row-nomargin {
+  margin: 0;
 }
 
 @include tablet {

@@ -1,13 +1,14 @@
 import React from 'react';
 
 import CustomTextInput from './custom_text_input';
+import NormalButton from '../button_components/normal_button_component';
 
 interface Props {
     defaultValue: string;
     isEnable: boolean;
-    onSave?: Function;
+    onSave?(text: string): void;
     placeholder?: string;
-    onTextChange?: Function;
+    onTextChange?(text: string): void;
 }
 
 interface State {
@@ -32,11 +33,13 @@ class EditableTextInput extends React.Component<Props, State> {
   }
 
   showEditOption = (): JSX.Element => {
-    let a = <button onClick={() => {
-        if(this.props.onSave)
-            this.props.onSave(this.state.currentTextValue);
-    }}>Save</button>;
-    return a;
+    if(this.canShowEditOption()){
+      return <NormalButton title="Save" isEnable={this.props.isEnable} onClick={() => {
+          if(this.props.onSave)
+              this.props.onSave(this.state.currentTextValue);
+      }}/>;
+    }
+    return <React.Fragment />;
   }
 
   canShowEditOption = (): boolean => {
@@ -47,11 +50,11 @@ class EditableTextInput extends React.Component<Props, State> {
   
   render(){
     return (
-      <div className="editableTextInputContainer">
+      <div className={"editableTextInputContainer"}>
           <CustomTextInput type="text" defaultValue={this.state.currentTextValue}
             placeholder={this.props.placeholder} onTextChange={this.handleTextChange}
             isEnable={this.props.isEnable} required={false}/>
-          {this.canShowEditOption() && this.showEditOption()}
+            {this.showEditOption()}
       </div>
     );
   }

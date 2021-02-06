@@ -1,0 +1,14 @@
+img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.normal_img_container {
+  max-height: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.editable_img_container {
+  @include shadowContainer(0);
+}
