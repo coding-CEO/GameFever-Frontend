@@ -27,6 +27,10 @@
   margin-top: $margin_top;
 }
 
+// basic component scss
 @import "./basic_components/button.scss";
 @import "./basic_components/input.scss";
 @import "./basic_components/image.scss";
+
+// main component scss
+@import "./navigation_bar_components/navigation_bar.scss";

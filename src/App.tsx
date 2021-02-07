@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.scss';
 
+import NavigationBar from './components/navigationBar_components/navigationBar';
+
 import EditableImageComponent from './components/basic_components/image_components/editable_image_component';
 import EditableTextInput from './components/basic_components/input_components/editable_text_input';
 import NormalButton from './components/basic_components/button_components/normal_button_component';
@@ -27,22 +29,28 @@ class App extends React.Component<any, State> {
 
   render() {
     return (
-      <div className="row">
-        <div className="main_container col-">
-          <EditableImageComponent onSave={this.debugHandler} isEnable={this.state.isEnable} />
-          <EditableTextInput placeholder="Editable Placeholder" isEnable={this.state.isEnable} defaultValue="" onSave={this.debugHandler} />
-          <EditableTextInput placeholder="Normal Placeholder" isEnable={this.state.isEnable} defaultValue="" />
-          <NormalButton title="Submit" onClick={this.debugHandler} isEnable={this.state.isEnable} />
-          {/* TODO: Create these components */}
-          {/* 
-          <NavigationBar />
+      <React.Fragment>
+        <div className="row-nomargin">
+          <div className="col-12">
+            <NavigationBar />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col- col-t-10">
+            {/* TODO: Create these components */}
+            {/*
           <ErrorMessage />
           <Router>
           </Router>
           <Footer /> 
           */}
+            <EditableImageComponent onSave={this.debugHandler} isEnable={this.state.isEnable} />
+            <EditableTextInput placeholder="Editable Placeholder" isEnable={this.state.isEnable} defaultValue="" onSave={this.debugHandler} />
+            <EditableTextInput placeholder="Normal Placeholder" isEnable={this.state.isEnable} defaultValue="" />
+            <NormalButton title="Submit" onClick={this.debugHandler} isEnable={this.state.isEnable} />
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
