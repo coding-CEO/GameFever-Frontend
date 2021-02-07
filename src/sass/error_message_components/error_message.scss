@@ -1,0 +1,9 @@
+.error_message_container {
+  @include flex(row, center);
+  background-color: rgb(204, 196, 126);
+  color: rgb(255, 85, 85);
+  border-radius: 3px;
+  border: 2px solid rgb(255, 85, 85);
+  padding: 2px;
+  margin: 5px;
+}

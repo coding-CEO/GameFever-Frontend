@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 
 import NavigationBar from './components/navigationBar_components/navigationBar';
+import ErrorMessage from './components/errorMessage_components/errorMessage_component';
 
 import EditableImageComponent from './components/basic_components/image_components/editable_image_component';
 import EditableTextInput from './components/basic_components/input_components/editable_text_input';
@@ -33,6 +34,13 @@ class App extends React.Component<any, State> {
         <div className="row-nomargin">
           <div className="col-12">
             <NavigationBar />
+          </div>
+        </div>
+        <div className="row-nomargin">
+          <div className="col-12">
+            {/* TODO: generate error messages programatically through ErrorHandler Class */}
+            <ErrorMessage message={"Access Denied - 401"} />
+            <ErrorMessage message={"Nikal - 403"} />
           </div>
         </div>
         <div className="row">
