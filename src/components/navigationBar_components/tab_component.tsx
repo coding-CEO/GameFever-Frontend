@@ -1,8 +1,8 @@
 import React from 'react';
 import { Category } from '../../interfaces/Category';
-import { createBrowserHistory } from 'history';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface Props {
+interface Props extends RouteComponentProps {
     category: Category;
 }
 
@@ -20,7 +20,8 @@ class Tab extends React.Component<Props, any> {
         let routeState: Object = {
             category: this.props.category,
         };
-        createBrowserHistory().push(route, routeState);
+
+        this.props.history.push(route, routeState);
     }
 
     render() {

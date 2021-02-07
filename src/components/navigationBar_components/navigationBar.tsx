@@ -7,9 +7,10 @@ import NavigationBarTabs from './navigationBar_tabs_component';
 import NormalImage from '../basic_components/image_components/normal_image_component';
 import NormalButton from '../basic_components/button_components/normal_button_component';
 
+import { RouteComponentProps } from 'react-router-dom';
 import { CategoryList } from '../../utils/CategoryList';
 
-interface Props {
+interface Props extends RouteComponentProps {
 
 }
 
@@ -45,7 +46,7 @@ class NavigationBar extends React.Component<Props, State> {
                         <MainSearch />
                         <NormalImage imgUrl={shoppingCartIcom} widthInPx={45} />
                     </div>
-                    <NavigationBarTabs categoryList={CategoryList} />
+                    <NavigationBarTabs categoryList={CategoryList} {...this.props} />
                 </div>
             </nav>
         );
