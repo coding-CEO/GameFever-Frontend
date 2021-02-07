@@ -4,3 +4,8 @@
   justify-content: $justify_content;
   flex-direction: $flex_direction;
 }
+
+@mixin flexNew($flex_direction, $align-items, $justify_content) {
+  @include flex($flex_direction, $justify_content);
+  align-items: $align-items;
+}

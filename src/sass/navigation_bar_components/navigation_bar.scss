@@ -1,0 +1,101 @@
+nav {
+  padding: 5px;
+  background-color: $primaryColor;
+}
+
+.nav_container {
+  @include flex(column, center);
+  margin: auto;
+
+  button {
+    margin: 0;
+    margin-left: 5px;
+  }
+
+  .nav_top_container {
+    width: 100%;
+    @include flexNew(row, flex-start, center);
+  }
+
+  .nav_logo_account_info_container {
+    @include flexNew(row, flex-start, space-between);
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .nav_account_info_container,
+  .main_search_cart_container {
+    @include flex(row, center);
+  }
+
+  .main_search_container {
+    @include flex(row, center);
+    width: 100%;
+    margin-right: 5px;
+  }
+}
+
+// Tabs below
+.nav_container {
+  .nav_tabs_container {
+    @include flexNew(row, flex-start, flex-end);
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+
+    ul {
+      @include flex(column, space-between);
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-top: 8px;
+        cursor: pointer;
+        padding: 5px 8px;
+        border-radius: 4px;
+        border: 2px solid $secondaryColor;
+
+        &:active {
+          opacity: 75%;
+          background-color: $secondaryColor;
+        }
+
+        @include laptop {
+          &:hover {
+            opacity: 75%;
+            background-color: $secondaryColor;
+          }
+        }
+      }
+
+      .active {
+        pointer-events: none;
+        background-color: $secondaryColor;
+      }
+    }
+
+    img {
+      width: 50px;
+      cursor: pointer;
+    }
+
+    .hideTabs {
+      display: none;
+    }
+
+    @include tablet {
+      ul,
+      .hideTabs {
+        @include flex(row, space-between);
+        li {
+          margin-top: 0;
+        }
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+}
