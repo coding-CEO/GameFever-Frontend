@@ -26,6 +26,13 @@ nav {
   .nav_account_info_container,
   .main_search_cart_container {
     @include flex(row, center);
+
+    img {
+      cursor: pointer;
+      &:active {
+        border: 2px solid white;
+      }
+    }
   }
 
   .main_search_container {
@@ -77,8 +84,13 @@ nav {
     }
 
     img {
-      width: 50px;
+      width: 40px;
       cursor: pointer;
+      flex-shrink: 0;
+      margin-right: 3px;
+      &:active {
+        border: 2px solid white;
+      }
     }
 
     .hideTabs {

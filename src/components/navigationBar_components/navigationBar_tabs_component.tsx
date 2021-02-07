@@ -1,9 +1,11 @@
 import React from 'react';
 import { Category } from '../../interfaces/Category';
-import toggleIcon from '../../static/images/temp.png';
+import toggleIcon from '../../static/images/menu_icon.svg';
 import Tab from './tab_component';
 
-interface Props {
+import { RouteComponentProps } from 'react-router-dom';
+
+interface Props extends RouteComponentProps {
     categoryList: Category[];
 }
 
@@ -31,11 +33,10 @@ class NavigationBarTabs extends React.Component<Props, State> {
             <div className="nav_tabs_container">
                 <ul className={this.state.isTabsOn ? "" : "hideTabs"}>
                     {this.props.categoryList && this.props.categoryList.map((category: Category) => {
-                        return <Tab category={category} key={category.title} />;
+                        return <Tab category={category} key={category.title} {...this.props} />;
                     })}
                 </ul>
 
-                {/* TODO: add toggle burgur icon */}
                 <img src={toggleIcon} alt="Toggle Menu" onClick={this.handleToggleClick} />
             </div>
         );

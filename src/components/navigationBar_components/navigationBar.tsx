@@ -1,14 +1,16 @@
 import React from 'react';
 import temp from '../../static/images/temp.png';//TODO: temperary
+import shoppingCartIcom from '../../static/images/cart.png';
 
 import MainSearch from './search_component';
 import NavigationBarTabs from './navigationBar_tabs_component';
 import NormalImage from '../basic_components/image_components/normal_image_component';
 import NormalButton from '../basic_components/button_components/normal_button_component';
 
+import { RouteComponentProps } from 'react-router-dom';
 import { CategoryList } from '../../utils/CategoryList';
 
-interface Props {
+interface Props extends RouteComponentProps {
 
 }
 
@@ -42,9 +44,9 @@ class NavigationBar extends React.Component<Props, State> {
                     </div>
                     <div className="main_search_cart_container col-12">
                         <MainSearch />
-                        <NormalImage imgUrl={temp} widthInPx={50} />
+                        <NormalImage imgUrl={shoppingCartIcom} widthInPx={45} />
                     </div>
-                    <NavigationBarTabs categoryList={CategoryList} />
+                    <NavigationBarTabs categoryList={CategoryList} {...this.props} />
                 </div>
             </nav>
         );

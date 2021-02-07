@@ -1,3 +1,7 @@
+.error_page_container {
+  @include flex(row, center);
+}
+
 .error_message_container {
   @include flex(row, center);
   background-color: rgb(204, 196, 126);
