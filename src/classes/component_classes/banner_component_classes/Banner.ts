@@ -1,6 +1,6 @@
 export class Banner {
-    private bannerId: number;
-    private bannerImgUrl: string;
+    bannerId: number;
+    bannerImgUrl: string;
 
     //TODO: complete this.
     constructor(bannerId: number, bannerImgUrl: string){

@@ -7,10 +7,6 @@ import ErrorMessage from './components/error_components/errorMessage_component';
 import Home from './components/home_components/Home';
 import ErrorPage from './components/error_components/errorPage_component';
 
-import EditableImageComponent from './components/basic_components/image_components/editable_image_component';
-import EditableTextInput from './components/basic_components/input_components/editable_text_input';
-import NormalButton from './components/basic_components/button_components/normal_button_component';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 interface State {
@@ -49,24 +45,16 @@ class App extends React.Component<any, State> {
             </div>
           </div>
           <div className="row">
-            <div className="col- col-t-10">
+            <div className="col-12">
               <Switch>
-                <Route path="/" component={Home} exact /> {/* TODO: home component */}
+                <Route path="/" component={Home} exact />
                 {/* <Route path="/" component={}/> TODO: category component */}
                 <Route path="*" component={ErrorPage} />
               </Switch>
-              {/* TODO: Create these components */}
-              {/*
-          <Router>
-          </Router>
-          <Footer /> 
-          */}
-              <EditableImageComponent onSave={this.debugHandler} isEnable={this.state.isEnable} />
-              <EditableTextInput placeholder="Editable Placeholder" isEnable={this.state.isEnable} defaultValue="" onSave={this.debugHandler} />
-              <EditableTextInput placeholder="Normal Placeholder" isEnable={this.state.isEnable} defaultValue="" />
-              <NormalButton title="Submit" onClick={this.debugHandler} isEnable={this.state.isEnable} />
             </div>
           </div>
+          {/* TODO: Footer */}
+          {/* <Footer />  */}
         </Router>
       </React.Fragment>
     );

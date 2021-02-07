@@ -14,14 +14,8 @@ class Tab extends React.Component<Props, any> {
     }
 
     handleTabClick = (): void => {
-        // TODO: handle the issue of category and
-        // try to generalize route changing
-        let route: string = `/category/${this.props.category.title}`
-        let routeState: Object = {
-            category: this.props.category,
-        };
-
-        this.props.history.push(route, routeState);
+        let route: string = `/category/${this.props.category.title}`;
+        this.props.history.push(route);
     }
 
     render() {

@@ -5,6 +5,7 @@ interface Props {
     alternateText?: string;
     heightInPx?: number;
     widthInPx?: number;
+    borderRadiusInPx?: number;
     onClick?: Function;
 }
 
@@ -17,8 +18,12 @@ class NormalImageComponent extends React.Component<Props, any> {
                     if (this.props.onClick)
                         this.props.onClick();
                 }}
-                style={{ height: this.props.heightInPx, width: this.props.widthInPx }}>
-                <img src={this.props.imgUrl} alt={this.props.alternateText} />
+                style={{
+                    height: this.props.heightInPx, width: this.props.widthInPx,
+                    borderRadius: this.props.borderRadiusInPx
+                }}>
+                <img src={this.props.imgUrl} alt={this.props.alternateText}
+                    style={{ borderRadius: this.props.borderRadiusInPx }} />
             </div>
         );
     };

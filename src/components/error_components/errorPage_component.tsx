@@ -10,6 +10,7 @@ interface State {
 class ErrorPage extends React.Component<Props, State> {
 
     render() {
+        // console.log(this.props.location.state);
         return (
             <div className="error_page_container">
                 <h3>404 Page not Found</h3>
