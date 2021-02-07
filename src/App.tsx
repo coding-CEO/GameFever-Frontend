@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 
 import NavigationBar from './components/navigationBar_components/navigationBar';
-import ErrorMessage from './components/errorMessage_components/errorMessage_component';
+import ErrorMessage from './components/error_components/errorMessage_component';
 
 import EditableImageComponent from './components/basic_components/image_components/editable_image_component';
 import EditableTextInput from './components/basic_components/input_components/editable_text_input';
@@ -47,7 +47,6 @@ class App extends React.Component<any, State> {
           <div className="col- col-t-10">
             {/* TODO: Create these components */}
             {/*
-          <ErrorMessage />
           <Router>
           </Router>
           <Footer /> 

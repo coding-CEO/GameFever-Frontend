@@ -1,6 +1,6 @@
 import React from 'react';
 import { Category } from '../../interfaces/Category';
-import toggleIcon from '../../static/images/temp.png';
+import toggleIcon from '../../static/images/menu_icon.svg';
 import Tab from './tab_component';
 
 interface Props {
@@ -35,7 +35,6 @@ class NavigationBarTabs extends React.Component<Props, State> {
                     })}
                 </ul>
 
-                {/* TODO: add toggle burgur icon */}
                 <img src={toggleIcon} alt="Toggle Menu" onClick={this.handleToggleClick} />
             </div>
         );

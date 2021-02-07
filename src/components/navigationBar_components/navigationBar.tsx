@@ -1,5 +1,6 @@
 import React from 'react';
 import temp from '../../static/images/temp.png';//TODO: temperary
+import shoppingCartIcom from '../../static/images/cart.png';
 
 import MainSearch from './search_component';
 import NavigationBarTabs from './navigationBar_tabs_component';
@@ -42,7 +43,7 @@ class NavigationBar extends React.Component<Props, State> {
                     </div>
                     <div className="main_search_cart_container col-12">
                         <MainSearch />
-                        <NormalImage imgUrl={temp} widthInPx={50} />
+                        <NormalImage imgUrl={shoppingCartIcom} widthInPx={45} />
                     </div>
                     <NavigationBarTabs categoryList={CategoryList} />
                 </div>
