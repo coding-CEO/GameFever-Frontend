@@ -14,7 +14,6 @@ class Home extends React.Component<Props, any> {
             <div className="home_container">
                 <Banners />
                 <HomeCards />
-                <HomeCards />
             </div>
         );
     }

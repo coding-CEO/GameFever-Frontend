@@ -1,0 +1,16 @@
+.slidingProducts_container {
+  @include flex(row, center);
+
+  .productCards_container {
+    display: -webkit-inline-box;
+    overflow-x: scroll;
+    margin: 0 5px;
+    padding: 10px 0;
+  }
+}
+
+.productCard_vertical_container {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+}

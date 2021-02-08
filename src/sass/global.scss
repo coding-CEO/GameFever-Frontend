@@ -23,14 +23,39 @@
 @mixin shadowContainer($margin_top) {
   border-radius: 4px;
   box-shadow: 0 0 3px $containerBorderColor;
-  padding: 5px;
+  // padding: 5px;
   margin-top: $margin_top;
+}
+
+.left_arrow_container,
+.right_arrow_container {
+  cursor: pointer;
+  padding: 15px 0px;
+  border: 1px solid rgb(149, 149, 149);
+  border-radius: 6px;
+  opacity: 90%;
+
+  &:active {
+    border: none;
+  }
+}
+
+.left_arrow_container {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.right_arrow_container {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 // basic component scss
 @import "./basic_components/button.scss";
 @import "./basic_components/input.scss";
 @import "./basic_components/image.scss";
+
+// General components
+@import "./general_components/general_components.scss";
 
 // main component scss
 @import "./navigation_bar_components/navigation_bar.scss";
