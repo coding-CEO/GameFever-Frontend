@@ -4,7 +4,9 @@ import './App.scss';
 import NavigationBar from './components/navigationBar_components/navigationBar';
 import ErrorMessage from './components/error_components/errorMessage_component';
 
-import Home from './components/home_components/Home';
+import HomePage from './components/home_components/HomePage';
+import LoginPage from './components/authentication_components/login_page';
+import SignUpPage from './components/authentication_components/signup_page';
 import ErrorPage from './components/error_components/errorPage_component';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -47,7 +49,9 @@ class App extends React.Component<any, State> {
           <div className="row">
             <div className="col-12">
               <Switch>
-                <Route path="/" component={Home} exact />
+                <Route path="/" component={HomePage} exact />
+                <Route path="/login" component={LoginPage} exact />
+                <Route path="/signup" component={SignUpPage} exact />
                 {/* <Route path="/" component={}/> TODO: category component */}
                 <Route path="*" component={ErrorPage} />
               </Switch>

@@ -5,6 +5,7 @@ interface Props {
     product: Product;
 }
 
+//TODO: complete this.
 class ProductCardVertical extends React.Component<Props, any> {
 
     render() {

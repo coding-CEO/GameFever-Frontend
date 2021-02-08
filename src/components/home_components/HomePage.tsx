@@ -7,7 +7,7 @@ interface Props {
 
 }
 
-class Home extends React.Component<Props, any> {
+class HomePage extends React.Component<Props, any> {
 
     render() {
         return (
@@ -19,4 +19,4 @@ class Home extends React.Component<Props, any> {
     }
 }
 
-export default Home;
+export default HomePage;

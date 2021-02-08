@@ -27,12 +27,16 @@
   margin-top: $margin_top;
 }
 
+@mixin border($borderRadius) {
+  border: 1px solid rgb(149, 149, 149);
+  border-radius: $borderRadius;
+}
+
 .left_arrow_container,
 .right_arrow_container {
+  @include border(6px);
   cursor: pointer;
   padding: 15px 0px;
-  border: 1px solid rgb(149, 149, 149);
-  border-radius: 6px;
   opacity: 90%;
 
   &:active {
@@ -61,3 +65,4 @@
 @import "./navigation_bar_components/navigation_bar.scss";
 @import "./error_components/error_message.scss";
 @import "./home_components/home_component.scss";
+@import "./authentication_components/authentication_components.scss";

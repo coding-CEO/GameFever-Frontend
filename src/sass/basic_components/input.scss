@@ -21,6 +21,7 @@ input {
   position: relative;
   font-size: 14px;
   padding-top: 6px;
+  margin-top: 5px;
   width: 100%;
   @include flex(row, center);
 

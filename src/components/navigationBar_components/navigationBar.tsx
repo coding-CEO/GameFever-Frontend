@@ -9,6 +9,7 @@ import NormalButton from '../basic_components/button_components/normal_button_co
 
 import { RouteComponentProps } from 'react-router-dom';
 import { CategoryList } from '../../utils/CategoryList';
+import { Route } from '../../utils/Route';
 
 interface Props extends RouteComponentProps {
 
@@ -19,6 +20,21 @@ interface State {
 }
 
 class NavigationBar extends React.Component<Props, State> {
+
+    constructor(props: Props) {
+        super(props);
+        this.goToLoginRoute.bind(this);
+        this.goToSignUpRoute.bind(this);
+    }
+
+    //TODO: change this function later
+    // ref: /utils/Authentication
+    goToLoginRoute = (): void => {
+        Route.goToRoute('/login', this.props.history);
+    }
+    goToSignUpRoute = (): void => {
+        Route.goToRoute('/signup', this.props.history);
+    }
 
     debugClick = () => {
         //TODO: temperary
@@ -34,8 +50,8 @@ class NavigationBar extends React.Component<Props, State> {
                                 <NormalImage imgUrl={temp} widthInPx={60} />
                             </div>
                             <div className="nav_account_info_container">
-                                <NormalButton title="Login" isEnable={true} onClick={this.debugClick} />
-                                <NormalButton title="Sign Up" isEnable={true} onClick={this.debugClick} />
+                                <NormalButton title="Login" isEnable={true} onClick={this.goToLoginRoute} />
+                                <NormalButton title="Sign Up" isEnable={true} onClick={this.goToSignUpRoute} />
                                 {/* <div className="nav_account_icon_container">
                                     //TODO: complete this...
                                 </div> */}

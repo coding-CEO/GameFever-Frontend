@@ -1,0 +1,17 @@
+.login_page_container {
+  @include flex(row, center);
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  form {
+    @include border(4px);
+    @include flex(column, center);
+    padding: 10px;
+
+    button {
+      margin-top: 10px;
+    }
+  }
+}
