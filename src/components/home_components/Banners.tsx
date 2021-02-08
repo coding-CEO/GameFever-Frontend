@@ -2,12 +2,17 @@ import React from 'react';
 
 import { Banner } from '../../classes/component_classes/banner_component_classes/Banner';
 
-import banner_img from '../../static/images/temp.png';
+//TODO: temperary
+import temp from '../../static/images/temp.png';
+import temp1 from '../../static/images/temp1.jpeg';
+import temp2 from '../../static/images/temp2.jpg';
+import temp3 from '../../static/images/temp3.jpg';
+
 import leftArrowIcon from '../../static/images/left-arrow.svg';
 import rightArrowIcon from '../../static/images/right-arrow.svg'
 
 import NormalImage from '../basic_components/image_components/normal_image_component';
-import BannerComponent from './Banner';
+import BannerComponent from './Banner_component';
 
 interface Props {
 
@@ -39,7 +44,10 @@ class Banners extends React.Component<Props, State> {
 
     setBanners = (): void => {
         this.setState({
-            banners: [new Banner(0, banner_img), new Banner(1, banner_img), new Banner(2, banner_img)],
+            banners: [new Banner(0, temp),
+            new Banner(1, temp1),
+            new Banner(2, temp2),
+            new Banner(3, temp3)],
             activeBannerIndex: 0,
         })
     }

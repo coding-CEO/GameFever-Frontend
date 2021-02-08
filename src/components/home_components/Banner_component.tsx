@@ -12,8 +12,6 @@ interface Props {
 class BannerComponent extends React.Component<Props, any> {
 
     render() {
-        //TODO: remove this debug
-        console.log(this.props.banner.bannerId);
         return (
             <div className="banner_container">
                 <NormalImage imgUrl={this.props.banner.bannerImgUrl} alternateText="Banner Image"

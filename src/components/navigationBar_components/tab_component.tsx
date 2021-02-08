@@ -1,6 +1,7 @@
 import React from 'react';
 import { Category } from '../../interfaces/Category';
 import { RouteComponentProps } from 'react-router-dom';
+import { Route } from '../../utils/Route';
 
 interface Props extends RouteComponentProps {
     category: Category;
@@ -15,7 +16,7 @@ class Tab extends React.Component<Props, any> {
 
     handleTabClick = (): void => {
         let route: string = `/category/${this.props.category.title}`;
-        this.props.history.push(route);
+        Route.goToRoute(route, this.props.history);
     }
 
     render() {
