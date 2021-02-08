@@ -35,6 +35,9 @@ class NavigationBar extends React.Component<Props, State> {
     goToSignUpRoute = (): void => {
         Route.goToRoute('/signup', this.props.history);
     }
+    goToHomeRoute = (): void => {
+        Route.goToRoute('/', this.props.history);
+    }
 
     debugClick = () => {
         //TODO: temperary
@@ -46,7 +49,7 @@ class NavigationBar extends React.Component<Props, State> {
                 <div className="nav_container col-t-11 col-l-10">
                     <div className="nav_top_container">
                         <div className="nav_logo_account_info_container">
-                            <div className="main_logo_container">
+                            <div className="main_logo_container" onClick={this.goToHomeRoute}>
                                 <NormalImage imgUrl={temp} widthInPx={60} />
                             </div>
                             <div className="nav_account_info_container">

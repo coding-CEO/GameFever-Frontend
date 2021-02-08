@@ -12,6 +12,10 @@ nav {
     margin-left: 5px;
   }
 
+  .main_logo_container {
+    cursor: pointer;
+  }
+
   .nav_top_container {
     width: 100%;
     @include flexNew(row, flex-start, center);
