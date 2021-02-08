@@ -33,7 +33,7 @@ class HomeCards extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className="homeCards_container">
+            <div className="homeCards_container col-t-11 col-l-10">
                 {this.state.homeCards.length > 0 && this.state.homeCards.map((homeCard) => {
                     return <HomeCardComponent key={homeCard.homecardId} homeCard={homeCard} />;
                 })}

@@ -1,9 +1,12 @@
 import React from 'react';
 
+import ErrorMessageContainer from '../error_components/errorMessageContainer_component';
 import CustomTextInput from '../basic_components/input_components/custom_text_input';
 import NormalButton from '../basic_components/button_components/normal_button_component';
 
 import { Prompt } from 'react-router-dom';
+import { ErrorMessageManager } from '../../classes/error_classes/ErrorMessageManager';
+import { ErrorMessage } from '../../classes/error_classes/ErrorMessage';
 
 interface Props {
 
@@ -14,6 +17,7 @@ interface State {
     password: string;
     isEnable: boolean;
     canShowPrompt: boolean;
+    errorManager: ErrorMessageManager;
 }
 
 class LoginPage extends React.Component<Props, State> {
@@ -25,7 +29,18 @@ class LoginPage extends React.Component<Props, State> {
             password: "",
             isEnable: true,
             canShowPrompt: false,
+            errorManager: new ErrorMessageManager(),
         }
+        this.isValidEmail.bind(this);
+        this.isValidPassword.bind(this);
+        this.canShowPrompt.bind(this);
+        this.setEmail.bind(this);
+        this.setPassword.bind(this);
+        this.setLoginFormEnableStatus.bind(this);
+        this.handleSubmit.bind(this);
+        this.pushError.bind(this);
+        this.hasErrors.bind(this);
+        this.updateErrorList.bind(this);
     }
 
     isValidEmail = (email: string): boolean => {
@@ -60,18 +75,41 @@ class LoginPage extends React.Component<Props, State> {
         this.setState({ isEnable: isEnable });
     }
 
+    hasErrors = (): boolean => {
+        let hasError: boolean = false;
+        if (this.state.email.length <= 0) {
+            this.pushError("Enter Email");
+            hasError = true;
+        } else if (!this.isValidEmail(this.state.email)) {
+            this.pushError("Enter Valid Email");
+            hasError = true;
+        }
+        if (this.state.password.length <= 0) {
+            this.pushError("Enter Password");
+            hasError = true;
+        } else if (!this.isValidPassword(this.state.password)) {
+            this.pushError("Enter Valid Password");
+            hasError = true;
+        }
+
+        return hasError;
+    }
+
     handleSubmit = (): void => {
         this.setLoginFormEnableStatus(false);
-        if (this.state.email.length <= 0 || !this.isValidEmail(this.state.email)) {
+        if (this.hasErrors()) {
             this.setLoginFormEnableStatus(true);
-            //TODO: show error "enter email"
-            alert("enter email");
+        } else {
+            //TODO: submit form
         }
-        if (this.state.password.length <= 0 || !this.isValidPassword(this.state.password)) {
-            this.setLoginFormEnableStatus(true);
-            //TODO: show error "enter password"
-            alert("enter password");
-        }
+    }
+
+    pushError = (errorMessage: string): void => {
+        this.state.errorManager.push(new ErrorMessage(errorMessage), this.updateErrorList);
+    }
+
+    updateErrorList = (): void => {
+        this.setState({ errorManager: this.state.errorManager });
     }
 
     render() {
@@ -85,6 +123,7 @@ class LoginPage extends React.Component<Props, State> {
                     <CustomTextInput placeholder="Password" type="password" isEnable={this.state.isEnable}
                         onTextChange={this.setPassword} defaultValue={this.state.password} />
                     <NormalButton title="Submit" isEnable={this.state.isEnable} onClick={this.handleSubmit} />
+                    <ErrorMessageContainer errors={this.state.errorManager.errors} />
                 </form>
             </div>
         );
