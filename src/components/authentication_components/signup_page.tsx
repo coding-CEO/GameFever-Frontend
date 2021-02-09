@@ -4,6 +4,9 @@ import CustomTextInput from '../basic_components/input_components/custom_text_in
 import NormalButton from '../basic_components/button_components/normal_button_component';
 
 import { Prompt } from 'react-router-dom';
+import { ErrorMessageManager } from '../../classes/error_classes/ErrorMessageManager';
+import { ErrorMessage } from '../../classes/error_classes/ErrorMessage';
+import ErrorMessageContainer from '../error_components/errorMessageContainer_component';
 
 interface Props {
 
@@ -15,6 +18,7 @@ interface State {
     confirmPassword: string;
     isEnable: boolean;
     canShowPrompt: boolean;
+    errorManager: ErrorMessageManager;
 }
 
 class SignUpPage extends React.Component<Props, State> {
@@ -27,7 +31,24 @@ class SignUpPage extends React.Component<Props, State> {
             confirmPassword: "",
             isEnable: true,
             canShowPrompt: false,
+            errorManager: new ErrorMessageManager(),
         }
+        this.isValidEmail.bind(this);
+        this.isValidPassword.bind(this);
+        this.isValidConfirmPassword.bind(this);
+        this.canShowPrompt.bind(this);
+        this.setEmail.bind(this);
+        this.setPassword.bind(this);
+        this.setConfirmPassword.bind(this);
+        this.setLoginFormEnableStatus.bind(this);
+        this.hasErrors.bind(this);
+        this.handleSubmit.bind(this);
+        this.pushError.bind(this);
+        this.updateErrorList.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.state.errorManager.setCallBack(false);
     }
 
     isValidEmail = (email: string): boolean => {
@@ -73,23 +94,49 @@ class SignUpPage extends React.Component<Props, State> {
         this.setState({ isEnable: isEnable });
     }
 
+    hasErrors = (): boolean => {
+        let hasError: boolean = false;
+
+        if (this.state.email.length <= 0) {
+            hasError = true;
+            this.pushError("Enter Email");
+        } else if (!this.isValidEmail(this.state.email)) {
+            hasError = true;
+            this.pushError("Enter Valid Email");
+        }
+        if (this.state.password.length <= 0) {
+            hasError = true;
+            this.pushError("Enter Password");
+        } else if (!this.isValidPassword(this.state.password)) {
+            hasError = true;
+            this.pushError("Enter Valid Password");
+        }
+        if (this.state.confirmPassword.length <= 0) {
+            hasError = true;
+            this.pushError("Enter Confirm Password");
+        } else if (!this.isValidConfirmPassword(this.state.confirmPassword)) {
+            hasError = true;
+            this.pushError("Enter Valid Confirm Password");
+        }
+
+        return hasError;
+    }
+
     handleSubmit = (): void => {
         this.setLoginFormEnableStatus(false);
-        if (this.state.email.length <= 0 || !this.isValidEmail(this.state.email)) {
+        if (this.hasErrors()) {
             this.setLoginFormEnableStatus(true);
-            //TODO: show error "enter email"
-            alert("enter email");
+        } else {
+            //TODO: submit form
         }
-        if (this.state.password.length <= 0 || !this.isValidPassword(this.state.password)) {
-            this.setLoginFormEnableStatus(true);
-            //TODO: show error "enter password"
-            alert("enter password");
-        }
-        if (this.state.confirmPassword.length <= 0 || !this.isValidConfirmPassword(this.state.confirmPassword)) {
-            this.setLoginFormEnableStatus(true);
-            //TODO: show error "enter password"
-            alert("enter confirm password");
-        }
+    }
+
+    pushError = (errorMessage: string): void => {
+        this.state.errorManager.push(new ErrorMessage(errorMessage), this.updateErrorList);
+    }
+
+    updateErrorList = (): void => {
+        this.setState({ errorManager: this.state.errorManager });
     }
 
     render() {
@@ -106,6 +153,7 @@ class SignUpPage extends React.Component<Props, State> {
                         isEnable={this.state.isEnable} onTextChange={this.setConfirmPassword}
                         defaultValue={this.state.confirmPassword} />
                     <NormalButton title="Submit" isEnable={this.state.isEnable} onClick={this.handleSubmit} />
+                    <ErrorMessageContainer errors={this.state.errorManager.errors} />
                 </form>
             </div>
         );

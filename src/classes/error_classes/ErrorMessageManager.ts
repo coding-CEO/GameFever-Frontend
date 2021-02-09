@@ -2,8 +2,11 @@ import { ErrorMessage } from "./ErrorMessage";
 
 export class ErrorMessageManager {
     errors: ErrorMessage[];
+    private canCallBack: boolean;
+
     constructor(){
         this.errors = [];
+        this.canCallBack = true;
     }
 
     private pop = (callback: Function) => {
@@ -13,10 +16,15 @@ export class ErrorMessageManager {
         callback();
     }
 
+    setCallBack = (canCalLBack: boolean): void => {
+        this.canCallBack = canCalLBack;
+    }
+
     push = (error: ErrorMessage, callback: Function) => {
         this.errors.push(error);
         setTimeout(() => {
-            this.pop(callback);
+            if(this.canCallBack)
+                this.pop(callback);
         }, 3000);
     }
 }

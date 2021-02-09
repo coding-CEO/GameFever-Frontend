@@ -2,6 +2,11 @@
   @include flex(row, center);
 }
 
+.error_message_main_container {
+  width: 100%;
+  margin-top: 10px;
+}
+
 .error_message_container {
   @include flex(row, center);
   background-color: rgb(204, 196, 126);
@@ -9,5 +14,9 @@
   border-radius: 3px;
   border: 2px solid rgb(255, 85, 85);
   padding: 2px;
-  margin: 5px;
+  margin-top: 5px;
+
+  h3 {
+    font-size: 15px;
+  }
 }

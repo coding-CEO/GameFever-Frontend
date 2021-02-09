@@ -43,6 +43,10 @@ class LoginPage extends React.Component<Props, State> {
         this.updateErrorList.bind(this);
     }
 
+    componentWillUnmount() {
+        this.state.errorManager.setCallBack(false);
+    }
+
     isValidEmail = (email: string): boolean => {
         //TODO: verify email syntax
         return true;

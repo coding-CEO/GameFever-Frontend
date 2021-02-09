@@ -18,8 +18,8 @@ class App extends React.Component<any, State> {
 
   constructor(props: any) {
     super(props);
-    this.debugHandler.bind(this);
     this.state = { isEnable: true }
+    this.debugHandler.bind(this);
   }
 
   debugHandler = (d: any) => {
