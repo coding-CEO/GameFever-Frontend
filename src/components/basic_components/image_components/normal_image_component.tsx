@@ -19,11 +19,14 @@ class NormalImageComponent extends React.Component<Props, any> {
                         this.props.onClick();
                 }}
                 style={{
-                    height: this.props.heightInPx, width: this.props.widthInPx,
+                    height: this.props.heightInPx,
+                    width: this.props.widthInPx,
                     borderRadius: this.props.borderRadiusInPx
                 }}>
                 <img src={this.props.imgUrl} alt={this.props.alternateText}
-                    style={{ borderRadius: this.props.borderRadiusInPx }} />
+                    style={{
+                        borderRadius: this.props.borderRadiusInPx,
+                    }} />
             </div>
         );
     };

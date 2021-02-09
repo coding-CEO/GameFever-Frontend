@@ -7,6 +7,7 @@ import HomePage from './components/home_components/HomePage';
 import LoginPage from './components/authentication_components/login_page';
 import SignUpPage from './components/authentication_components/signup_page';
 import ErrorPage from './components/error_components/errorPage_component';
+import ProductPage from './components/product_components/productPage_component';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -44,6 +45,7 @@ class App extends React.Component<any, State> {
                 <Route path="/" component={HomePage} exact />
                 <Route path="/login" component={LoginPage} exact />
                 <Route path="/signup" component={SignUpPage} exact />
+                <Route path="/product/:productId" component={ProductPage} exact />
                 {/* <Route path="/" component={}/> TODO: category component */}
                 <Route path="*" component={ErrorPage} />
               </Switch>

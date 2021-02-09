@@ -1,20 +1,21 @@
+import * as H from 'history';
+import { Route } from './Route';
 // TODO: very importants
 export class ErrorHandler {
 
     static handle = (error: Error) => {
         // TODO: handle error here
-        
     }
 
-    static ERROR500 = () => {
-        //TODO: ERROR 500 : show 500 screen
+    static ERROR500 = (routeHistory: H.History) => {
+        Route.goToRoute('/500', routeHistory);
     }
 
-    static ERROR404 = () => {
-        //TODO: ERROR 404 : show 404 screen
+    static ERROR404 = (routeHistory: H.History) => {
+        Route.goToRoute('/404', routeHistory);
     }
 
-    static ERROR401 = () => {
-        //TODO: ERROR 401 : show 401 messsage
+    static ERROR401 = (routeHistory: H.History) => {
+        Route.goToRoute('/401', routeHistory);
     }
 }
