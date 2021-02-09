@@ -1,12 +1,16 @@
+// TODO: Give all details
+// FIXME: fix all issues
 export class Product {
-    productId: number;
-    productTitle: string;
+    productId?: number;
+    productTitle?: string;
     productImageUrls: string[];
-    // TODO: Give all details
 
-    constructor(productId: number, productTitle: string, productImageUrls: string[]) {
+    constructor(productId?: number, productTitle?: string, productImageUrls?: string[]) {
         this.productId = productId;
         this.productTitle = productTitle;
-        this.productImageUrls = productImageUrls;
+        if(productImageUrls)
+            this.productImageUrls = productImageUrls;
+        else
+            this.productImageUrls = [];
     }
 }
