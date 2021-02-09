@@ -10,7 +10,46 @@
 }
 
 .productCard_vertical_container {
-  width: 200px;
-  height: 200px;
-  margin: 0;
+  @include flexNew(column, flex-start, flex-start);
+  width: 170px;
+  margin: 0 5px;
+  padding: 5px;
+
+  &:active {
+    .productCard_img_container {
+      transform: scale(1.05);
+    }
+  }
+
+  @include laptop {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .productCard_img_container {
+    align-self: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    .normal_img_container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  h2 {
+    color: $textColor;
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  h4 {
+    font-weight: lighter;
+  }
 }

@@ -1,0 +1,57 @@
+@mixin disable {
+  .disable {
+    pointer-events: none;
+    background-color: $disableElementColor;
+    color: $disableTextColor;
+    border: 2px solid $disableElementBorderColor;
+  }
+}
+
+@include disable();
+
+@mixin shadowContainer($margin_top) {
+  border-radius: 4px;
+  box-shadow: 0 0 3px $containerBorderColor;
+  // padding: 5px;
+  margin-top: $margin_top;
+}
+
+@mixin border($borderRadius) {
+  border: 1px solid rgb(149, 149, 149);
+  border-radius: $borderRadius;
+}
+
+.left_arrow_container,
+.right_arrow_container {
+  @include border(6px);
+  cursor: pointer;
+  padding: 15px 0px;
+  opacity: 90%;
+
+  &:active {
+    border: none;
+  }
+}
+
+.left_arrow_container {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.right_arrow_container {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.text_container {
+  width: 100%;
+
+  p,
+  h2,
+  h3,
+  h4,
+  h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

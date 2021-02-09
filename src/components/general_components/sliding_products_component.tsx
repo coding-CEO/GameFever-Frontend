@@ -8,7 +8,9 @@ import { Product } from '../../classes/product_classes/product';
 import NormalImage from '../basic_components/image_components/normal_image_component';
 import ProductCardVertical from '../product_components/productCard_vertical_component';
 
-interface Props {
+import { RouteComponentProps } from 'react-router-dom';
+
+interface Props extends RouteComponentProps {
     products: Product[],
 }
 
@@ -36,7 +38,7 @@ class SlidingProductsComponent extends React.Component<Props, any> {
                 </div>
                 <div className="productCards_container col-t-12">
                     {this.props.products.length > 0 && this.props.products.map((product: Product) => {
-                        return <ProductCardVertical key={product.productId} product={product} />
+                        return <ProductCardVertical key={product.productId} product={product} {...this.props} />
                     })}
                 </div>
                 <div className="right_arrow_container" onClick={this.rightSlide}>
