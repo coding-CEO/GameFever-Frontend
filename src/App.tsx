@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 
 import NavigationBar from './components/navigationBar_components/navigationBar';
-import ErrorMessage from './components/error_components/errorMessage_component';
 
 import HomePage from './components/home_components/HomePage';
 import LoginPage from './components/authentication_components/login_page';
@@ -19,8 +18,8 @@ class App extends React.Component<any, State> {
 
   constructor(props: any) {
     super(props);
-    this.debugHandler.bind(this);
     this.state = { isEnable: true }
+    this.debugHandler.bind(this);
   }
 
   debugHandler = (d: any) => {
@@ -37,13 +36,6 @@ class App extends React.Component<any, State> {
           <div className="row-nomargin">
             <div className="col-12">
               <Route component={NavigationBar} />
-            </div>
-          </div>
-          <div className="row-nomargin">
-            <div className="col-12">
-              {/* TODO: generate error messages programatically through ErrorHandler Class */}
-              {/* <ErrorMessage message={"Access Denied - 401"} />
-              <ErrorMessage message={"Nikal - 403"} /> */}
             </div>
           </div>
           <div className="row">

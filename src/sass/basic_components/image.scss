@@ -5,6 +5,7 @@ img {
 }
 
 .normal_img_container {
+  @include flexNew(row, center, center);
   max-height: 300px;
   border-radius: 4px;
   overflow: hidden;

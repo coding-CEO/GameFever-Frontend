@@ -3,7 +3,9 @@ import React from 'react';
 import Banners from './Banners';
 import HomeCards from './HomeCards';
 
-interface Props {
+import { RouteComponentProps } from 'react-router-dom';
+
+interface Props extends RouteComponentProps {
 
 }
 
@@ -13,7 +15,7 @@ class HomePage extends React.Component<Props, any> {
         return (
             <div className="home_container">
                 <Banners />
-                <HomeCards />
+                <HomeCards {...this.props} />
             </div>
         );
     }
