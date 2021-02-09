@@ -45,7 +45,7 @@ class ProductPage extends React.Component<Props, State> {
     setProductInState = () => {
         this.setState({
             product: new Product(this.getProductIdFromParams(this.state.params), 'Title of Product',
-                [tempImg, tempImg1, tempImg, tempImg1]),
+                [tempImg, tempImg1]),
         })
     }
 
