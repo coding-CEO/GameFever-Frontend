@@ -39,8 +39,9 @@ class ProductPageImages extends React.Component<Props, State> {
                         {this.props.imageUrls.length > 0 && this.props.imageUrls.map((imageUrl: string, index) => {
                             return (
                                 <div className="productPageImg_container"
+                                    key={imageUrl}
                                     onClick={() => this.setPosterImage(index)}>
-                                    <NormalImage key={imageUrl} imgUrl={imageUrl} widthInPx={60} />
+                                    <NormalImage imgUrl={imageUrl} widthInPx={60} />
                                 </div>
                             )
                         })}

@@ -110,6 +110,7 @@ class LoginPage extends React.Component<Props, State> {
 
     pushError = (errorMessage: string): void => {
         this.state.errorManager.push(new ErrorMessage(errorMessage), this.updateErrorList);
+        this.updateErrorList();
     }
 
     updateErrorList = (): void => {

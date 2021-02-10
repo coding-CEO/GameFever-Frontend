@@ -9,6 +9,7 @@ import { ErrorHandler } from '../../utils/ErrorHandler';
 
 import ProductPageImages from './productPage_Images_component';
 import ProductPageDetails from './productPage_details_component';
+import ProductPageReviewsMainContainer from './productPage_reviews_main_component';
 
 import { RouteComponentProps } from 'react-router-dom';
 
@@ -57,9 +58,7 @@ class ProductPage extends React.Component<Props, State> {
                     <ProductPageImages imageUrls={this.state.product.productImageUrls} />
                     <ProductPageDetails product={this.state.product} />
                 </div>
-                <div className="product_review_container">
-                    This is Review Container
-                </div>
+                <ProductPageReviewsMainContainer {...this.props} />
                 <div className="product_auto_suggestion_container">
                     {/* TODO: complete this*/}
                 </div>
