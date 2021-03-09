@@ -9,7 +9,7 @@ import { ErrorHandler } from '../../utils/ErrorHandler';
 
 import ProductPageImages from './productPage_Images_component';
 import ProductPageDetails from './productPage_details_component';
-import ProductPageReviewsMainContainer from './productPage_reviews_main_component';
+import ProductPageReviewsMainContainer from './productReviews/productPage_reviews_main_component';
 
 import { RouteComponentProps } from 'react-router-dom';
 

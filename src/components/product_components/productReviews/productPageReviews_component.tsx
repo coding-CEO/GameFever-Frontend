@@ -3,7 +3,7 @@ import React from 'react';
 import ReviewComponent from './productReview_component';
 
 import { RouteComponentProps } from 'react-router-dom';
-import { ReviewData } from '../../classes/component_classes/review_component_classes/ReviewData';
+import { ReviewData } from '../../../classes/component_classes/review_component_classes/ReviewData';
 
 interface Props extends RouteComponentProps {
 
@@ -35,11 +35,12 @@ class ProductPageReviewsComponent extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className="reviews_container col-t-11 col-l-10">
+            <div className="reviews_container col-12">
                 {this.state.reviews.length > 0 && this.state.reviews.map((review: ReviewData) => {
                     return <ReviewComponent key={review.userId} reviewData={review} />
                 })}
             </div>
+            //TODO: add navigation here...
         );
     }
 

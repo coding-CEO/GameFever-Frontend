@@ -6,10 +6,10 @@ interface Props {
 }
 
 class ProductPageDetais extends React.Component<Props, any> {
-    constructor(props: Props) {
-        super(props);
-        //TODO: function ref
-    }
+    // constructor(props: Props) {
+    //     super(props);
+    //     //TODO: function ref
+    // }
 
     render() {
         return (

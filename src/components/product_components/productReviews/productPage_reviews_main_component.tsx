@@ -1,10 +1,10 @@
 import React from 'react';
 
 import ProductPageReviewsComponent from './productPageReviews_component';
-import ErrorMessageContainer from '../error_components/errorMessageContainer_component';
-import EditableInput from '../basic_components/input_components/editable_text_input';
-import { ErrorMessageManager } from '../../classes/error_classes/ErrorMessageManager';
-import { ErrorMessage } from '../../classes/error_classes/ErrorMessage';
+import ErrorMessageContainer from '../../error_components/errorMessageContainer_component';
+import EditableInput from '../../basic_components/input_components/editable_text_input';
+import { ErrorMessageManager } from '../../../classes/error_classes/ErrorMessageManager';
+import { ErrorMessage } from '../../../classes/error_classes/ErrorMessage';
 
 import { RouteComponentProps } from 'react-router-dom';
 var classNames = require('classnames');

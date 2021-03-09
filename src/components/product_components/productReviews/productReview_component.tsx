@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReviewData } from '../../classes/component_classes/review_component_classes/ReviewData';
+import { ReviewData } from '../../../classes/component_classes/review_component_classes/ReviewData';
 
 var classNames = require('classnames');
 
