@@ -20,7 +20,7 @@ input {
 .custom_text_input_container {
   position: relative;
   font-size: 14px;
-  padding-top: 6px;
+  padding-top: 8px;
   margin-top: 5px;
   width: 100%;
   @include flex(row, center);
@@ -35,7 +35,7 @@ input {
 
   .hasValue + .placeholder,
   input:focus + .placeholder {
-    top: 6px;
+    top: 9px;
     font-size: 12px;
     color: $normalTextColor;
   }
@@ -59,6 +59,12 @@ input {
 
 .editableTextInputContainer {
   @include shadowContainer(10px);
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+  .custom_text_input_container {
+    margin-top: 0;
+  }
 }
 
 .image_choose_container {

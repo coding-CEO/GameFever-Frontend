@@ -10,8 +10,121 @@
   }
 }
 
+.product_review_main_container {
+  max-width: 800px;
+  margin-top: 15px;
+  h2 {
+    font-weight: lighter;
+  }
+
+  .bad {
+    .rating_number {
+      background-color: red;
+    }
+  }
+  .average {
+    .rating_number {
+      background-color: #caac00;
+    }
+  }
+  .good {
+    .rating_number {
+      background-color: #388e3c;
+    }
+  }
+
+  .product_review_container {
+    @include flex(column, center);
+    margin-top: 5px;
+
+    .error_message_main_container {
+      margin-top: 5px;
+    }
+
+    .rating_number {
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.reviews_container {
+  margin-top: 8px;
+
+  .review_container {
+    @include flexNew(column, flex-start, center);
+    @include border(4px);
+    margin-bottom: 5px;
+    padding: 5px;
+
+    .review {
+      font-size: 16px;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+
+    .review_info_container {
+      @include flex(row, center);
+
+      .name {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .rating_number {
+        padding: 3px;
+        border-radius: 3px;
+      }
+      .bad {
+        background-color: red;
+      }
+      .average {
+        background-color: #caac00;
+      }
+      .good {
+        background-color: #388e3c;
+      }
+    }
+    h3 {
+      font-weight: 400;
+    }
+  }
+}
+
 .product_details_container {
   margin-top: 10px;
+
+  h3 {
+    font-weight: 400;
+    font-size: 21px;
+  }
+
+  .price_container {
+    @include flex(row, flex-start);
+    margin-top: 5px;
+
+    .selling_price {
+      margin-right: 10px;
+    }
+    .original_price {
+      color: $disableTextColor;
+      margin-right: 10px;
+    }
+    .discount_percentage {
+      color: #388e3c;
+    }
+  }
+
+  .description_container {
+    margin-top: 15px;
+    h2 {
+      font-weight: lighter;
+      font-size: 20px;
+    }
+    p {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+  }
 
   @include laptop {
     margin-left: 10px;
@@ -74,6 +187,7 @@
       flex-direction: column;
       padding: 0;
       margin: 0;
+      overflow: visible;
     }
 
     .left_arrow_container,
